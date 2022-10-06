@@ -1,2 +1,2 @@
-#!/bin/baht
+#!/bin/bash
 cp -u *.html ..
