@@ -1,4 +1,2 @@
 #!/bin/bash
-sort | uniq -u
-
-:wq
+ls -t | head
