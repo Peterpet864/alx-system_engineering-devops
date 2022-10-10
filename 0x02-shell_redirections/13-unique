@@ -1,0 +1,6 @@
+#!/bin/bash
+sort | uniq -u
+
+:wq
+
+
