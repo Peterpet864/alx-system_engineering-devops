@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Display bash processes
+# shellcheck disable=SC2009
+# ps ux -C bash f
+ps axu f | grep 'bash'

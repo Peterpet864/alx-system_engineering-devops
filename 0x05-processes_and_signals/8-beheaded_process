@@ -1,0 +1,3 @@
+!/usr/bin/env bash
+# WHOA-OH-OH-AH-AH-AH-AAAA-HA-AH-AH-AH
+pkill --signal 9 -f 7-highlander

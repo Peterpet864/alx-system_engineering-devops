@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Scapegoat
+trap hate 15
+trap loveless 2
+trap end 3
+pgrep -f 100-process_and_pid_file > /var/run/holbertonscript.pid
+
+hate()
+{
+echo "I hate the kill command"
+rm /var/run/holbertonscript.pid
+exit
+}
+
+loveless()
+{
+echo "Y U no love me?!"
+exit
+}
+
+end()
+{
+rm /var/run/holbertonscript.pid
+exit
+}
+
+while ((1))
+do
+  echo "To infinity and beyond"
+  sleep 2
+done

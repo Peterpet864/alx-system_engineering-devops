@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# WHOA-OH-OH-AH-AH-AH-AAAA-HA-AH-AH-AH
+trap immortal 15
+
+immortal()
+{
+echo "I am invincible!!!"
+}
+
+while ((1))
+do
+  echo "To infinity and beyond"
+  sleep 2
+done

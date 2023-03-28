@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# manager
+nums=("$#")
+args=("$@")
+if ((nums != 1))
+then
+  echo 'Usage: manage_my_process {start|stop|restart}'
+  exit
+fi
+case ${args[0]} in
+  "start")
+    ./manage_my_process &
+    pgrep -f '/manage_my_process' > /var/run/my_process.pid
+    echo "manage_my_process started"
+    ;;
+  "stop")
+    rm /var/run/my_process.pid
+    sudo pkill -f ./manage_my_process
+    echo "manage_my_process stopped"
+    ;;
+  "restart")
+    rm /var/run/my_process.pid
+    sudo pkill -f ./manage_my_process
+    ./manage_my_process &
+    pgrep -f '/manage_my_process' > /var/run/my_process.pid
+    echo "manage_my_process restarted"
+    ;;
+  *)
+    echo "Usage: manage_my_process {start|stop|restart}"
+    ;;
+esac
