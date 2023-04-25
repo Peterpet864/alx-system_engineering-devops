@@ -1,5 +1,16 @@
-# setup client SSH configuration
+# Create an SSH configuration file using Puppet
+include stdlib
 
-exec { 'echo "PasswordAuthentication no\nIdentityFile ~/.ssh/school" >> /etc/ssh/ssh_config':
-        path    => '/bin/'
-}:wq
+file_line{'Set Identity file location':
+  ensure  => present,
+  path    => '/etc/ssh/ssh_config',
+  line    => '  IdentityFile ~/.ssh/school',
+  replace => true
+}
+
+file_line{'Disable password authentication':
+  ensure  => present,
+  path    => '/etc/ssh/ssh_config',
+  line    => '  PasswordAuthentication no',
+  replace => true
+}
